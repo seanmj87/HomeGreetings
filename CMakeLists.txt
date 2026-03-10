@@ -8,7 +8,6 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 option(KVDB_BUILD_TESTS "Build unit tests" ON)
 
 add_library(kvdbproject_lib
-  src/kvdb.cpp
   src/storage/in_memory_store.cpp
   src/raft/raft_node.cpp
   src/replication/replicator.cpp
