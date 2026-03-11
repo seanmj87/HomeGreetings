@@ -1,4 +1,4 @@
-#pragma once 
+#pragma once
 
 #include <string> 
 #include <string_view>
@@ -7,15 +7,14 @@
 #include "kvdb/commands/command.h"
 
 namespace kvdb {
-    
-    class CommandParser {
-    public:
-        ParseResult Parse(const std::string_view input) const;
-    
 
-    private:
-        std::vector<std::string_view> Tokenize(const std::string_view input, std::string* error) const;
+class CommandParser {
+public:
+  ParseResult Parse(std::string_view input) const;
 
-        static CommandType ParseType(const std::string_view command_str);
-    };
-}
+private:
+  static std::vector<std::string_view> Tokenize(std::string_view input, std::string* error);
+  static CommandType ParseType(std::string_view command_str);
+};
+
+}  // namespace kvdb
